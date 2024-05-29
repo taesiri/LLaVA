@@ -25,9 +25,9 @@ def load_image(image_file):
         image = Image.open(image_file).convert('RGB')
     return image
 
-def write_to_csv(model_path, model_base, image_file, prompt, response):
-    file_exists = os.path.isfile('output.csv')
-    with open('output.csv', mode='a', newline='') as file:
+def write_to_csv(output_file, model_path, model_base, image_file, prompt, response):
+    file_exists = os.path.isfile(output_file)
+    with open(output_file, mode='a', newline='') as file:
         writer = csv.writer(file)
         if not file_exists:
             writer.writerow(['Model Path', 'Model Base', 'Image File URL', 'Prompt', 'Response'])
@@ -110,7 +110,7 @@ def main(args):
                     print(f"{roles[1]}: {outputs}")
 
                     # Write to CSV
-                    write_to_csv(args.model_path, args.model_base if args.model_base else "", image_file, prompt, outputs)
+                    write_to_csv(args.output_file, args.model_path, args.model_base if args.model_base else "", image_file, prompt, outputs)
 
                     if args.debug:
                         print("\n", {"prompt": prompt_text, "outputs": outputs}, "\n")
@@ -123,6 +123,7 @@ if __name__ == "__main__":
     parser.add_argument("--model-base", type=str, default=None)
     parser.add_argument("--image-file-list", type=str, required=True)
     parser.add_argument("--prompt-file", type=str, required=True)
+    parser.add_argument("--output-file", type=str, default="output.csv", help="The CSV file where results will be saved")
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--conv-mode", type=str, default=None)
     parser.add_argument("--temperature", type=float, default=0.2)
