@@ -1,4 +1,18 @@
-describe the image
-gimme a 1 line description of the image
-what is written on the image?
-what is on the left side of the image?
+Describe the image in a one-line description.
+Describe the image in detail.
+Does the image have a watermark?
+What does the subtitle say?
+What is in the top left corner of the image?
+What is on the right side of the image?
+What is the weather condition?
+Who or what is the main focus of the image?
+What is strange about this image?
+What is the expression of the main character?
+What is the background of the image?
+What is the color of the image?
+What is the style of the image?
+What is the tone of the image?
+What is the mood of the image?
+What is the atmosphere of the image?
+What is the setting of the image?
+What is the time of the image?
