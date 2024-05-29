@@ -1,0 +1,4 @@
+describe the image
+gimme a 1 line description of the image
+what is written on the image?
+what is on the left side of the image?
